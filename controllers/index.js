@@ -12,4 +12,8 @@ router.use('/comments', commentRoutes);
 // the routes serving pages are  in different files, get all those corrected
 router.use('/', homeRoutes);
 
+
 module.exports = router;
+
+
+//add res.render statements to the routes in userRoutes, etc.

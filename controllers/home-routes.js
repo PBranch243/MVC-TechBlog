@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
 });
 
 // get single post
-router.get('/post/:id', (req, res) => {
+router.get('/posts/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
@@ -75,10 +75,10 @@ router.get('/post/:id', (req, res) => {
         return;
       }
 
-      const post = dbPostData.get({ plain: true });
+      const posts = dbPostData.get({ plain: true });
 
       res.render('single-post', {
-        post,
+        posts,
         loggedIn: req.session.loggedIn
       });
     })
@@ -97,4 +97,11 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+//route to render the dashboard
+//Add route to return all of a users posts and pass it to the render on line 104
+router.get('/dashboard', (req, res)=> {
+  if (req.session.loggedIn){
+    res.render('dashboard');
+  }
+})
 module.exports = router;
