@@ -4,8 +4,12 @@
         <p>{{post_text}}</p>
     </div>
     <div class="meta">
+        {{#if user.username}}
         by {{user.username}} on {{format_date created_at}}
+        {{else}}
+        by Anonymous on {{format_date created_at}}
+        {{/if}}
         |
-        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+        <a href="/posts/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </div>
 </article>
