@@ -99,8 +99,8 @@ router.get('/login', (req, res) => {
 
 //route to render the dashboard
 //Add route to return all of a users posts and pass it to the render on line 104
-router.get('/dashboard', (req, res)=> {
-  if (req.session.loggedIn){
+router.get('/dashboard', (req, res) => {
+  if (req.session.loggedIn) {
     res.render('dashboard');
   }
 })
