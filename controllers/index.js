@@ -9,6 +9,7 @@ const homeRoutes = require('./home-routes');
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
+
 // the routes serving pages are  in different files, get all those corrected
 router.use('/', homeRoutes);
 
