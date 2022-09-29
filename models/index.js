@@ -4,6 +4,8 @@ const User = require('./User');
 const Comment = require('./Comment');
 
 // create associations
+// think I need a through table to associate comments with posts and users.  this is what I think causes the problem with my seeds
+
 User.hasMany(Post, {
   foreignKey: 'user_id'
 });
