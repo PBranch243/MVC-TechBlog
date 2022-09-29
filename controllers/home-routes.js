@@ -169,10 +169,10 @@ router.get('/dashboard/edit/:id', withAuth, (req, res) => {
         return;
       }
 
-      const posts = dbPostData.get({ plain: true });
+      const post = dbPostData.get({ plain: true });
 
       res.render('edit-post', {
-        posts,
+        post,
         loggedIn: req.session.loggedIn
       });
     })
